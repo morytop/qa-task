@@ -3,7 +3,7 @@ import "./App.css";
 
 const GUESTS = [23, 45, 155, 374, 22, 99, 100, 101, 115, 209];
 
-function calculateOccupancy(premiumRooms: any, economyRooms: any) {
+function calculateOccupancy(premiumRooms: number, economyRooms: number) {
   const sortedGuests = [...GUESTS].sort((a, b) => b - a);
   let premiumOccupancy = 0;
   let economyOccupancy = 0;
@@ -11,20 +11,12 @@ function calculateOccupancy(premiumRooms: any, economyRooms: any) {
   let economyRevenue = 0;
 
   for (const guest of sortedGuests) {
-    if (guest >= 100) {
-      continue;
-    }
-
-    if (premiumRooms > 0) {
+    if (guest >= 100 && premiumRooms > premiumOccupancy) {
       premiumOccupancy++;
       premiumRevenue += guest;
-      premiumRooms--;
-    } else if (economyRooms > 0) {
+    } else if (guest < 100 && economyRooms > economyOccupancy) {
       economyOccupancy++;
       economyRevenue += guest;
-      economyRooms--;
-    } else {
-      break;
     }
   }
 
