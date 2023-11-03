@@ -50,6 +50,7 @@ function App() {
           <div>
             <label htmlFor="premium-rooms">Premium Rooms:</label>
             <input
+              data-testid="premium-input"
               type="number"
               value={isNaN(premiumRooms) ? "" : premiumRooms.toString()}
               min={0}
@@ -62,6 +63,7 @@ function App() {
           <div>
             <label htmlFor="economy-rooms">Economy Rooms:</label>
             <input
+              data-testid="economy-input"
               type="number"
               value={isNaN(economyRooms) ? "" : economyRooms.toString()}
               min={0}
@@ -71,7 +73,9 @@ function App() {
             />
           </div>
           <br />
-          <button type="submit">Calculate Occupancy</button>
+          <button data-testid="calculate-btn" type="submit">
+            Calculate Occupancy
+          </button>
         </form>
         {occupancy && (
           <div>
