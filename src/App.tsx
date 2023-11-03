@@ -42,6 +42,10 @@ function App() {
   const [occupancy, setOccupancy] = useState<any>(null);
 
   const handleSubmit = (event: any) => {
+    if (isNaN(premiumRooms) || isNaN(economyRooms)) {
+      alert("Please enter valid number for Premium and Economy rooms.");
+      return;
+    }
     event.preventDefault();
     const result = calculateOccupancy(premiumRooms, economyRooms);
     setOccupancy(result);
