@@ -59,7 +59,7 @@ function App() {
             <p>Premium Rooms:</p>
             <input
               type="number"
-              value={premiumRooms}
+              value={isNaN(premiumRooms) ? "" : premiumRooms.toString()}
               min={0}
               onChange={(event) =>
                 setPremiumRooms(parseInt(event.target.value, 10))
@@ -71,7 +71,7 @@ function App() {
             <p>Economy Rooms:</p>
             <input
               type="number"
-              value={economyRooms}
+              value={isNaN(economyRooms) ? "" : economyRooms.toString()}
               min={0}
               onChange={(event) =>
                 setEconomyRooms(parseInt(event.target.value, 10))
