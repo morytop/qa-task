@@ -48,7 +48,7 @@ function App() {
       <div className="main">
         <form onSubmit={handleSubmit}>
           <div>
-            <p>Premium Rooms:</p>
+            <label htmlFor="premium-rooms">Premium Rooms:</label>
             <input
               type="number"
               value={isNaN(premiumRooms) ? "" : premiumRooms.toString()}
@@ -60,7 +60,7 @@ function App() {
           </div>
           <br />
           <div>
-            <p>Economy Rooms:</p>
+            <label htmlFor="economy-rooms">Economy Rooms:</label>
             <input
               type="number"
               value={isNaN(economyRooms) ? "" : economyRooms.toString()}
