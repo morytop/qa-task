@@ -84,10 +84,16 @@ function App() {
         {occupancy && (
           <div>
             <p>
-              Free Premium rooms: {premiumRooms - occupancy.premiumOccupancy}
+              Free Premium rooms:{" "}
+              {isNaN(premiumRooms - occupancy.premiumOccupancy)
+                ? 0
+                : premiumRooms - occupancy.premiumOccupancy}
             </p>
             <p>
-              Free Economy rooms: {economyRooms - occupancy.economyOccupancy}
+              Free Economy rooms:{" "}
+              {isNaN(economyRooms - occupancy.economyOccupancy)
+                ? 0
+                : economyRooms - occupancy.economyOccupancy}
             </p>
             <p>
               Usage Premium: {occupancy.premiumOccupancy} (EUR{" "}
