@@ -56,6 +56,7 @@ function App() {
             <input
               type="number"
               value={premiumRooms}
+              min={0}
               onChange={(event) =>
                 setPremiumRooms(parseInt(event.target.value, 10))
               }
@@ -67,6 +68,7 @@ function App() {
             <input
               type="number"
               value={economyRooms}
+              min={0}
               onChange={(event) =>
                 setEconomyRooms(parseInt(event.target.value, 10))
               }
